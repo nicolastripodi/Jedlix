@@ -99,6 +99,7 @@ namespace CarLoadOptimizer.Middleware.LoadOptimization
 
         /// <summary>
         /// Get the list of tariff period from the query
+        /// Create a list of tariff with date times that the car charge will have to go through, from its charge start date to the end date
         /// </summary>
         /// <exception cref="InvalidDataException">Throws an exception if the tariff data is invalid</exception>
         private void GetTariffPeriodFromQuery()
@@ -126,7 +127,7 @@ namespace CarLoadOptimizer.Middleware.LoadOptimization
                 throw new InvalidDataException("Tariff does not intersect with start time");
             DateTime startingPeriod = query.StartingTime;
 
-            // Then we create the tariff period from the start date to the end date
+            // Then we create the tariff period from the charge start date to the end date
             tariffCount = tariffsOrdered.Count + 1; // We do one more occurence in case the end date and start date are in the same tariff period
             while (tariffCount >= 0)
             {
