@@ -1,6 +1,7 @@
 # Car Load Optimizer
 ## How to run
 Executable contained in CarLoadOptimizer\bin\Release\net6.0\publish
+
 The folder also contains an example input file
 
 To run, open a console terminal in this folder and run this command with the two following parameters:
