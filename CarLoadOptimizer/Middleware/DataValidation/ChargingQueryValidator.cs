@@ -131,30 +131,31 @@ namespace CarLoadOptimizer.Middleware.DataValidation
 
             // Then we check if tariff encompass charging period: 
             // We create a list of continuous charging perid
-            List<TimePeriod> continuousChargingPeriods = new List<TimePeriod>();
-            continuousChargingPeriods.Add(new TimePeriod(currentTariffs[0].StartTime, currentTariffs[0].EndTime));
+            TimePeriod currentPeriod = new TimePeriod(currentTariffs[0].StartTime, currentTariffs[0].EndTime);
+            if (currentTariffs.Length == 1 && currentPeriod.Encompass(chargingPeriod)) // Only one tariff
+                return;
 
+            bool encompass = false;
             for (var i = 1; i < currentTariffs.Length; i++)
             {
-                if (continuousChargingPeriods.Last().End == currentTariffs[i].StartTime)
-                    continuousChargingPeriods.Last().End = currentTariffs[i].EndTime;
+                if (currentPeriod.End == currentTariffs[i].StartTime)
+                    currentPeriod.End = currentTariffs[i].EndTime;
                 else
-                    continuousChargingPeriods.Add(new TimePeriod(currentTariffs[i].StartTime, currentTariffs[i].EndTime));
-            }
-
-            // Then we check if any of this continuous charging period encompass the car charging period
-            bool encompass = false;
-            foreach (var continousChargingPeriod in continuousChargingPeriods)
-            {
-                if (continousChargingPeriod.Encompass(chargingPeriod))
                 {
-                    encompass = true;
-                    break;
+                    if (currentPeriod.Encompass(chargingPeriod))
+                    {
+                        encompass = true;
+                        break;
+                    }
+                    currentPeriod = new TimePeriod(currentTariffs[i].StartTime, currentTariffs[i].EndTime);
                 }
+                if (i == currentTariffs.Length - 1) // Check last tariff period
+                    encompass = currentPeriod.Encompass(chargingPeriod);
             }
 
             if (!encompass)
                 throw new JsonValidationException("Tariff does not encompass the charging period.");
+
         }
 
     }
