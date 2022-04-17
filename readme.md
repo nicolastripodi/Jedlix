@@ -12,6 +12,7 @@ To run, open a console terminal in this folder and run this command with the two
 The program will return errors if the following parameters are invalid:
 - Input file not existing or not of JSON format
 - Output file not of JSON format (will be created if it does not exists)
+
 Also if the following JSON input file content are wrong:
 - Car data missing or wrong (charge power and battery capacity <= 0, Current battery level <0, current battery level > battery capacity)
 - Tariffs missing or wrong (energy price <=0, also if tariff intersect with each other, EG a tariff from 8 to 12 and one from 10 to 14)
