@@ -63,6 +63,19 @@ namespace CarLoadOptimizerTest
             Assert.Pass();
         }
 
+        [Test]
+        public void CheckQueryWithCustomTariffCoverage()
+        {
+            List<Tariff> customTariff = new List<Tariff>();
+            customTariff.Add(new Tariff(new TimeOnly(1, 0), new TimeOnly(3, 0), 0.2m));
+            customTariff.Add(new Tariff(new TimeOnly(3, 0), new TimeOnly(7, 0), 0.25m));
+            DateTime startDate = new DateTime(DateTime.Now.Year + 1, 1, 1, 1, 0, 0);
+            UserSettings settings = new UserSettings(90, new TimeOnly(7, 0), 5, customTariff);
+            ChargingQuery query = new ChargingQuery(startDate, settings, defaultCarData);
+            ChargingQueryValidator.ValidateChargingQuery(query);
+            Assert.Pass();
+        }
+
         #endregion
 
         #region Invalid data testing
