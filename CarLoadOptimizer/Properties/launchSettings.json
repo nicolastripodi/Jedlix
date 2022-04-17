@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CarLoadOptimizer": {
+      "commandName": "Project",
+      "commandLineArgs": "input.json output.json"
+    }
+  }
+}

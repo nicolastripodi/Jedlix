@@ -1,0 +1,5 @@
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\bin\Release\net6.0\publish\CarLoadOptimizer.exe
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\bin\Release\net6.0\publish\CarLoadOptimizer.dll
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\bin\Release\net6.0\publish\CarLoadOptimizer.deps.json
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\bin\Release\net6.0\publish\CarLoadOptimizer.runtimeconfig.json
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\bin\Release\net6.0\publish\CarLoadOptimizer.pdb

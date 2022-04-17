@@ -1,0 +1,15 @@
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\bin\Release\net6.0\CarLoadOptimizer.exe
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\bin\Release\net6.0\CarLoadOptimizer.deps.json
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\bin\Release\net6.0\CarLoadOptimizer.runtimeconfig.json
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\bin\Release\net6.0\CarLoadOptimizer.dll
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\bin\Release\net6.0\CarLoadOptimizer.pdb
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\obj\Release\net6.0\CarLoadOptimizer.csproj.AssemblyReference.cache
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\obj\Release\net6.0\CarLoadOptimizer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\obj\Release\net6.0\CarLoadOptimizer.AssemblyInfoInputs.cache
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\obj\Release\net6.0\CarLoadOptimizer.AssemblyInfo.cs
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\obj\Release\net6.0\CarLoadOptimizer.csproj.CoreCompileInputs.cache
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\obj\Release\net6.0\CarLoadOptimizer.dll
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\obj\Release\net6.0\refint\CarLoadOptimizer.dll
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\obj\Release\net6.0\CarLoadOptimizer.pdb
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\obj\Release\net6.0\CarLoadOptimizer.genruntimeconfig.cache
+C:\Users\Nicolas\Desktop\Jedlix\CarLoadOptimizer\obj\Release\net6.0\ref\CarLoadOptimizer.dll

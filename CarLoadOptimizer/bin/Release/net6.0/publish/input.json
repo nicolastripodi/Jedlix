@@ -1,0 +1,29 @@
+{
+	"startingTime": "2023-01-04T22:12:23Z",
+	"userSettings": {
+		"desiredStateOfCharge": 90,
+		"leavingTime": "15:23",
+		"directChargingPercentage": 20,
+		"tariffs": [{
+				"startTime": "01:23",
+				"endTime": "11:23",
+				"energyPrice": 0.25
+			},
+			{
+				"startTime": "11:23",
+				"endTime": "12:23",
+				"energyPrice": 0.15
+			},
+			{
+				"startTime": "12:23",
+				"endTime": "01:23",
+				"energyPrice": 0.21
+			}
+		]
+	},
+	"carData": {
+		"chargePower": 15,
+		"batteryCapacity": 200,
+		"currentBatteryLevel": 12
+	}
+}
