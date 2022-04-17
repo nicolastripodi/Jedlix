@@ -3,6 +3,7 @@
 ## Requirements
 
 This app was build with .NET 6.0. 
+
 It can be downloaded at https://dotnet.microsoft.com/en-us/download/dotnet/6.0 (just the SDK is needed)
 
 ## How to run
