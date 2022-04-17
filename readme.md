@@ -7,6 +7,17 @@ To run, open a console terminal in this folder and run this command with the two
 - path_to_input_file.json: path to your json input file containing the charging query
 - path_to_output_file.json: path to your json output file where you want to get the result
 
+## Possible errors:
+
+The program will return errors if the following parameters are invalid:
+- Input file not existing or not of JSON format
+- Output file not of JSON format (will be created if it does not exists)
+Also if the following JSON input file content are wrong:
+- Car data missing or wrong (charge power and battery capacity <= 0, Current battery level <0, current battery level > battery capacity)
+- Tariffs missing or wrong (energy price <=0, also if tariff intersect with each other, EG a tariff from 8 to 12 and one from 10 to 14)
+- User settings missing or wrong (no tariffs specified, direct charging percentage or desired charging percentage < 0, direct charging percentage > desired charging percentage)
+- Charging query missing or wrong (JSON file empty, no car data / user settings specified, starting charge time in the past, if tariff do not cover the full charging period)
+
 ## Project structure
 
 Each .cs class contains comments with additional information
@@ -48,17 +59,12 @@ Each .cs class contains comments with additional information
 ## Design choices
 Some questions / answers on the app design choices
 
-> Why not use an UI?
+> Why a console app and not an API or an app with an UI?
 
-The exercise was already quite complete, adding an UI would have unnecessarily complicated the app. A console app allows to answer to the requirements, and we can chain the commands pretty easily for bulk file processing if necessary.
-
-> Then why not an API instead?
-
-Again, it would have unnecessarily complicated the app. The assignment did not specifiy that a lot of files query had to be satisfied at once, so again the console app statisfy the requirements.
-
-> Why a console app and not anything else?
-
-Simplest kind of app to develop, no reason to build anything more complicated if this is enough.
+The exercise was already quite complete, adding an UI would have unnecessarily complicated the app. 
+A console app allows to answer to the requirements, and we can chain the commands pretty easily for bulk file processing if necessary.
+The assignment did not specifiy that a lot of files query had to be satisfied at once, so an API was not necessary in my opinion.
+Also a console app is the simplest kind of app to develop, no reason to build anything more complicated if this is enough.
 
 > Why did you separate the app logic this way?
 
