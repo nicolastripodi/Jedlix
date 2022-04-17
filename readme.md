@@ -1,4 +1,9 @@
 # Car Load Optimizer
+
+## Requirements
+
+This app was build with .NET 6.0
+
 ## How to run
 Executable contained in CarLoadOptimizer\bin\Release\net6.0\publish
 
