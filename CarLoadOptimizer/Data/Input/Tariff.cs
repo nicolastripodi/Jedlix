@@ -43,24 +43,23 @@ namespace CarLoadOptimizer.Data.Input
             if (t == null)
                 return false;
 
-            if (t.StartTime == StartTime && t.EndTime == EndTime) // Same period covered
+            if ((t.StartTime == StartTime && t.EndTime == EndTime) || (t.StartTime < StartTime && EndTime > t.EndTime)) // Same period covered or if current tariff overlaps the specified tariff
                 return true;
 
             bool isCurrentTariffOvernight = StartTime > EndTime; // Check if its overnight (EG from 23:00 to 1:00)
-
-            bool doesOtherTariffEmcompassCurrentTariff = (t.StartTime < StartTime && EndTime > t.EndTime); // If current tariff overlaps the specified tariff
+            bool doesStartTimeInterects, doesEndTimeInterects;
 
             if (isCurrentTariffOvernight)
             {
-                bool doesStartTimeInterects = (StartTime < t.StartTime && t.StartTime <= TimeOnly.MaxValue || TimeOnly.MinValue <= t.StartTime && t.StartTime < EndTime); // Start time is contained in tariff
-                bool doesEndTimeInterects = (StartTime < t.EndTime && t.EndTime <= TimeOnly.MaxValue || TimeOnly.MinValue <= t.EndTime && t.EndTime < EndTime); // End time is contained in tariff
-                return doesStartTimeInterects || doesEndTimeInterects || doesOtherTariffEmcompassCurrentTariff;
+                doesStartTimeInterects = (StartTime < t.StartTime && t.StartTime <= TimeOnly.MaxValue || TimeOnly.MinValue <= t.StartTime && t.StartTime < EndTime); // Start time is contained in tariff
+                doesEndTimeInterects = (StartTime < t.EndTime && t.EndTime <= TimeOnly.MaxValue || TimeOnly.MinValue <= t.EndTime && t.EndTime < EndTime); // End time is contained in tariff
+                return doesStartTimeInterects || doesEndTimeInterects;
             }
             else
             {
-                bool doesStartTimeInterects = (StartTime < t.StartTime && t.StartTime < EndTime); // Start time is contained in tariff
-                bool doesEndTimeInterects = (StartTime < t.EndTime && t.EndTime < EndTime); // End time is contained in tariff
-                return doesStartTimeInterects || doesEndTimeInterects || doesOtherTariffEmcompassCurrentTariff;
+                doesStartTimeInterects = (StartTime < t.StartTime && t.StartTime < EndTime); // Start time is contained in tariff
+                doesEndTimeInterects = (StartTime < t.EndTime && t.EndTime < EndTime); // End time is contained in tariff
+                return doesStartTimeInterects || doesEndTimeInterects;
             }
         }
 
