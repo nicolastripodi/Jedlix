@@ -70,6 +70,7 @@ Also a console app is the simplest kind of app to develop, no reason to build an
 > Why did you separate the app logic this way?
 
 I created one main folder for the app, and another for the unit testing (with Nunit)
+
 For the main app, I created:
 - one folder for the custom app exceptions
 - one folder for the data structures definition
